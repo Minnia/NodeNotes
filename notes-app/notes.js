@@ -21,7 +21,14 @@ const addNote = (title, body) => {
     console.log("Note title taken");
   }
 };
-("jjdl");
+
+const removeNote = title => {
+  const notes = loadNotes();
+  console.log(title);
+  saveNotes(notes);
+  console.log("Note removed");
+};
+
 const saveNotes = notes => {
   const dataJSON = JSON.stringify(notes);
   fs.writeFileSync("notes.json", dataJSON);
@@ -37,4 +44,8 @@ const loadNotes = () => {
   }
 };
 
-module.exports = { getNotes: getNotes, addNote: addNote };
+module.exports = {
+  getNotes: getNotes,
+  addNote: addNote,
+  removeNote: removeNote
+};
