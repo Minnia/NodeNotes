@@ -1,6 +1,5 @@
-const fs = require("fs");
+// const fs = require("fs");
 const notes = require("./notes");
-// const chalk = require("chalk");
 const yargs = require("yargs");
 
 //Customize yargs version
@@ -24,7 +23,6 @@ yargs.command({
     }
   },
   handler: function(argv) {
-    // console.log("Title: " + argv.title + ": " + argv.body);
     notes.addNote(argv.title, argv.body);
   }
 });
@@ -41,7 +39,6 @@ yargs.command({
     }
   },
   handler: function(argv) {
-    // console.log("Removing note");
     notes.removeNote(argv.title);
   }
 });
